@@ -5,5 +5,5 @@ After graduation I started working as a paralegal for a law firm I had interned 
 
 After a while it became clear that a career in law was not for me, and I started exploring other options. Eventually I found programming and fell in love with it. I am very exfcited about starting a career in this field despite not having a technical background.
 
-I still love literature and spend much of my free time reading, mostly fiction. Classics are my jam. Donna Tartt, Virginia Woolf, Shakespeare, JK Rowling/Robert Galbraith, Susanna Clarke, Charles Dickens, Madeline Miller, and Hanya Yanagihara are some authors I love. 
+I still love literature and spend much of my free time reading, mostly fiction. Classics are my jam. Donna Tartt, Virginia Woolf, Shakespeare, JK Rowling/Robert Galbraith, Susanna Clarke, Charles Dickens, Madeline Miller, Gabriel García Márquez, Isabel Allende, and Hanya Yanagihara are some authors I love. 
 
