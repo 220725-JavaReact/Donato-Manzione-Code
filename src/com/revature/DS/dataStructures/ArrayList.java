@@ -17,7 +17,7 @@ public class ArrayList<T> {
 		this.length = 0;
 		this.size = 10;
 		this.currentLastIndex = 0;
-		this.backingArray = new Object[20];
+		this.backingArray = new Object[10];
 
 	}
 
