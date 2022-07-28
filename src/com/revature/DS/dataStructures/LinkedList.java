@@ -1,5 +1,7 @@
 package com.revature.DS.dataStructures;
 
+import com.revature.DS.util.EmptyCollectionException;
+
 public class LinkedList<T> {
 	Node<T> head;
 	Node<T> tail;
@@ -14,7 +16,10 @@ public class LinkedList<T> {
 		}
 	}
 	
-	public void printList() {
+	public void printList() throws EmptyCollectionException {
+		if(head == null) {
+			throw new EmptyCollectionException("Your linked list is empty!");
+		}
 		Node<T> traversalNode = head;
 		
 		System.out.print("Linked list: [");

@@ -29,7 +29,12 @@ public class Driver {
 		linkedL.addNode(3);
 		linkedL.addNode(4);
 		
-		linkedL.printList();
+		try {
+			linkedL.printList();
+		} catch (EmptyCollectionException e) {
+			
+			e.printStackTrace();
+		}
 		
 	}
 	
