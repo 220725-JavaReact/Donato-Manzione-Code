@@ -13,6 +13,22 @@ public class LinkedList<T> {
 			tail = tail.next;
 		}
 	}
+	
+	public void printList() {
+		Node<T> traversalNode = head;
+		
+		System.out.print("Linked list: [");
+		while(traversalNode!=null) {
+			
+			System.out.print(String.valueOf(traversalNode.data));
+			
+			if(traversalNode.next != null) {
+				System.out.print(" -> ");
+			}
+			traversalNode = traversalNode.next;
+		}
+		System.out.println("]");
+	}
 
 	private class Node<T> {
 		T data;
