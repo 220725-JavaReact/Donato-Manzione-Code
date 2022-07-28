@@ -9,8 +9,8 @@ public class Driver {
 
 	public static void main(String[] args) {
 		
-//		testArrayList();
-		testLinkedList();
+		testArrayList();
+//		testLinkedList();
 	}
 
 	
@@ -30,6 +30,10 @@ public class Driver {
 		linkedL.addNode(4);
 		
 		try {
+			linkedL.printList();
+			
+			linkedL = new LinkedList<Integer>();
+			//should throw exception
 			linkedL.printList();
 		} catch (EmptyCollectionException e) {
 			
@@ -52,7 +56,7 @@ public class Driver {
 
 	private static void testArrayList() {
 		ArrayList<Integer> integerArrayList = new ArrayList<Integer>();
-		for(int i = 0;i<10;i++) {
+		for(int i = 1;i<=20;i++) {
 			integerArrayList.addElement(i);
 		}
 		
@@ -61,6 +65,9 @@ public class Driver {
 			
 			System.out.println(integerArrayList.getElementAtIndex(4));
 			
+			//should throw custom exception
+			System.out.println(integerArrayList.getElementAtIndex(20));
+			
 		} catch (NoSuchElementException e) {
 			
 			e.printStackTrace();
@@ -68,7 +75,12 @@ public class Driver {
 		
 		Object arr[] = null;
 		try {
+			
 			arr = integerArrayList.getAllElements();
+			
+			ArrayList<Integer> testEmptyArrayList = new ArrayList<>();
+			//should throw custom exception
+			testEmptyArrayList.getAllElements();
 			
 			
 		} catch (EmptyCollectionException e) {
