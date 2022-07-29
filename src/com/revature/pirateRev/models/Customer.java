@@ -1,5 +1,12 @@
 package com.revature.pirateRev.models;
 
-public class Customer {
+import java.util.List;
 
+public class Customer {
+	private String name;
+	private String address;
+	private String email;
+	private List<Order> orders;
+	
+	
 }
