@@ -6,7 +6,8 @@ public class StoreFront {
 	private String name;
 	private List<Product> products;
 	private List<Order> orders;
-	private Map<String, String> addressBook = new HashMap<>() {{
+	private String address;
+	private Map<String, String> nauticalChart = new HashMap<>() {{
 		put("Captain Branch", "Fleur Marie: 44° 42' 59.22\" N -75° 28' 34.68\" W");
 		put("First Mate Branch", "Dawn: 42° 25' 15.06\" N -81° 21' 30.1212\" W");
 		put("Quartermaster Branch", "Valentine: 41° 55' 7.32\" N -81° 54' 47.16\" W");
@@ -19,8 +20,12 @@ public class StoreFront {
 	
 	}}; 
 	
-	public String getAddress(String storeName) {
-		return addressBook.get(storeName);
+	public StoreFront(String name) {
+		address = locate(name);
+	}
+	
+	public String locate(String name) {
+		return nauticalChart.get(name);
 	}
 	
 }
