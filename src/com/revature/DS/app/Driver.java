@@ -90,8 +90,10 @@ public class Driver {
 		
 		if(arr!=null) {
 			System.out.print("[ ");
-			for(Object i : arr) {
-				System.out.print(i + " ");
+			for(int i = 0;i<arr.length;i++) {
+				System.out.print(i);
+				if(i<arr.length-1)
+					System.out.print(" ");
 			}
 			System.out.println("]");
 		}
