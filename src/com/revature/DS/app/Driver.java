@@ -2,6 +2,7 @@ package com.revature.DS.app;
 
 import com.revature.DS.dataStructures.ArrayList;
 import com.revature.DS.dataStructures.LinkedList;
+import com.revature.DS.util.ArrayUtil;
 import com.revature.DS.util.EmptyCollectionException;
 import com.revature.DS.util.NoSuchElementException;
 
@@ -33,7 +34,7 @@ public class Driver {
 			linkedL.printList();
 			
 			linkedL = new LinkedList<Integer>();
-			//should throw exception
+			//should throw custom exception
 			linkedL.printList();
 		} catch (EmptyCollectionException e) {
 			
@@ -41,18 +42,6 @@ public class Driver {
 		}
 		
 	}
-	
-	
-	
-
-
-
-
-
-
-
-
-
 
 	private static void testArrayList() {
 		ArrayList<Integer> integerArrayList = new ArrayList<Integer>();
@@ -88,15 +77,7 @@ public class Driver {
 			e.printStackTrace();
 		}
 		
-		if(arr!=null) {
-			System.out.print("[ ");
-			for(int i = 0;i<arr.length;i++) {
-				System.out.print(i);
-				if(i<arr.length-1)
-					System.out.print(" ");
-			}
-			System.out.println("]");
-		}
+		ArrayUtil.printArray(arr);
 		
 		
 		
