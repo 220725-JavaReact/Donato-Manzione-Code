@@ -7,3 +7,6 @@ After a while it became clear that a career in law was not for me, and I started
 
 I still love literature and spend much of my free time reading, mostly fiction. Classics are my jam. Donna Tartt, Virginia Woolf, Shakespeare, JK Rowling/Robert Galbraith, Susanna Clarke, Charles Dickens, Yann Martel, Michael Cunningham, Toni Morrison, Madeline Miller, Gabriel García Márquez, Isabel Allende, and Hanya Yanagihara are some authors I love. 
 
+_______________________
+
+The projects and exercises for the training can be found in different branches of this repository.
