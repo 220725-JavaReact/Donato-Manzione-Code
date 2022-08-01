@@ -4,8 +4,8 @@ import java.util.*;
 
 public class StoreFront {
 	private String name;
-	private List<Product> products;
-	private List<Order> orders;
+	private List<Treasure> products;
+	private List<Booty> orders;
 	private String address;
 	private Map<String, String> nauticalChart = new HashMap<>() {{
 		put("Captain Branch", "Fleur Marie: 44° 42' 59.22\" N -75° 28' 34.68\" W");
