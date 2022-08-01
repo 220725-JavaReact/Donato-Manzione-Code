@@ -1,6 +1,6 @@
 package com.revature.pirateRev.models;
 
-public class Product {
+public class Treasure {
 	private String name;
 	private double price;
 	private String description;

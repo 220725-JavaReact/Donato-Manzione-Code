@@ -1,6 +1,6 @@
 package com.revature.pirateRev.models;
 
 public class LineItem {
-	private Product product;
+	private Treasure product;
 	private int quantity;
 }
