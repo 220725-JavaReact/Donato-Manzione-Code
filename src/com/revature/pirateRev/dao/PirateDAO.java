@@ -14,20 +14,21 @@ public class PirateDAO implements DAO<Pirate> {
 	}
 
 	@Override
-	public Pirate readByName(String name) {
-		for (Pirate p : readAll()) {
-			if (p.getName().equals(name)) {
-				return p;
+	public Pirate readByName(String name) throws NoSuchElementException {
+		for (Object p : readAll()) {
+			Pirate pir = (Pirate)p;
+			if (pir.getName().equals(name)) {
+				return pir;
 			}
 		}
 		throw new NoSuchElementException("There is no pirate called " + name);
 	}
 
 	@Override
-	public Pirate[] readAll() {
-		Pirate[] pirates = (Pirate[]) TempStorage.pirates.getAllElements();
-		Arrays.printArray(pirates);
-		return (Pirate[]) TempStorage.pirates.getAllElements();
+	public Object[] readAll() {
+		Object[] pirates =  TempStorage.pirates.getAllElements();
+//		Arrays.printArray(pirates);
+		return TempStorage.pirates.getAllElements();
 	}
 
 	@Override
