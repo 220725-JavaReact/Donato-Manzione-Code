@@ -9,6 +9,6 @@ public interface DAO<T> {
 
 	public void delete(String name);
 
-	public T[] readAll();
+	public Object[] readAll();
 
 }
