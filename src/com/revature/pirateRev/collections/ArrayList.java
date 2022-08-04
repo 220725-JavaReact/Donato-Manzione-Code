@@ -58,4 +58,15 @@ public class ArrayList<T> {
 		return newArray;
 	}
 
+	public void print() {
+		for (int i = 0; i < backingArray.length; i++) {
+			if (backingArray[i] == null)
+				break;
+			System.out.println("\n\n   " + (i+1) + ") " + backingArray[i]);
+		}
+	}
+	
+	public boolean isEmpty() {
+		return currentLastIndex==0;
+	}
 }

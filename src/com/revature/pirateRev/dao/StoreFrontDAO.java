@@ -17,7 +17,7 @@ public class StoreFrontDAO implements DAO<StoreFront> {
 	public StoreFront readByName(String name) {
 		for(Object storeObj : readAll()) {
 			StoreFront store = (StoreFront) storeObj;
-			if(store.getName().equals(name)) {
+			if(store.getName().equalsIgnoreCase(name + " branch")) {
 				return (StoreFront) store;
 			}
 		}

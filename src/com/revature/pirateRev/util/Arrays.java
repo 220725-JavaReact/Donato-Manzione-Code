@@ -1,7 +1,5 @@
 package com.revature.pirateRev.util;
 
-import com.revature.pirateRev.models.LineItem;
-import com.revature.pirateRev.models.Order;
 import com.revature.pirateRev.models.Pirate;
 import com.revature.pirateRev.models.Product;
 import com.revature.pirateRev.models.StoreFront;
@@ -19,6 +17,7 @@ public class Arrays {
 	public static void printArray(Object[] array) {
 		System.out.println("\t\t*******");
 		for (int i = 0; i < array.length; i++) {
+			if(array[i]==null) break;
 			System.out.print(array[i]);
 			if (i < array.length - 1)
 				System.out.println();
@@ -55,6 +54,9 @@ public class Arrays {
 					StoreFront store = (StoreFront) array[i];
 
 					System.out.println(store.getName());
+					
+					
+					
 				} else {
 					Product product = (Product) array[i];
 					if (array[0] == null) {
