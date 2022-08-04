@@ -1,12 +1,12 @@
 package com.revature.pirateRev.models;
 
-import java.util.List;
+import com.revature.pirateRev.collections.ArrayList;
 
 public class Pirate {
 	private String name;
 	private String address;
 	private String email;
-	private List<Order> orders;
+	private ArrayList<Order> orders;
 
 	public String getName() {
 		return name;
@@ -30,5 +30,22 @@ public class Pirate {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public ArrayList<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(ArrayList<Order> orders) {
+		this.orders = orders;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+	
 
 }
