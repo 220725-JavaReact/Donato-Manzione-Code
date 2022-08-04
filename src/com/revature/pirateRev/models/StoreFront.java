@@ -24,6 +24,7 @@ public class StoreFront {
 		return name;
 	}
 
+	
 	@Override
 	public String toString() {
 		return  "\t"+name.toUpperCase() +"\n\tLocation:\n\t\t" + address + "\n\n";

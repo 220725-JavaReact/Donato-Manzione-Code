@@ -95,6 +95,10 @@ public class Menu {
 		System.out.println("\nPlease select one of our stores: ");
 		
 		Arrays.printArray(TempStorage.storeFronts.getAllElements());
+		System.out.println("\nEnter the name of the store\nyou'd like to check out:\n");
+		
+		pirateInput = sc.nextLine();
+		
 		
 		
 	}

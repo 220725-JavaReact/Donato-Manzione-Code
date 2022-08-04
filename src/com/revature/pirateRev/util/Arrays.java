@@ -45,7 +45,7 @@ public class Arrays {
 					}
 					Pirate pirate = (Pirate) array[i];
 
-					System.out.print("\t\t "+pirate.getName());
+					System.out.print("\t\t " + pirate.getName());
 
 				} else if (printObject.equals(PrintObject.STORE_FRONT)) {
 

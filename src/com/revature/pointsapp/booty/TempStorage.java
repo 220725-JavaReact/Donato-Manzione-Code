@@ -7,7 +7,7 @@ public class TempStorage {
 
 	public static ArrayList pirates = new ArrayList();
 	public static ArrayList storeFronts = new ArrayList() {{
-			add(new StoreFront("First Mate Branch"));
+			add(new StoreFront("Captains Brancgh"));
 			add(new StoreFront("First Mate Branch"));
 			add(new StoreFront("Quartermaster Branch"));
 			add(new StoreFront("Sailing Master Branch"));
