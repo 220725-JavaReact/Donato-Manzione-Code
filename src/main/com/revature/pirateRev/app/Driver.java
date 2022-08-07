@@ -8,7 +8,7 @@ public class Driver {
 	private static CaptainsLogger logger = CaptainsLogger.getLogger();
 
 	public static void main(String[] args) {
-		logger.log(LogLevel.INFO, "Application starting up...\n\n");
+		logger.log(LogLevel.INFO, "Application starting up...");
 		Menu.open();
 
 	}

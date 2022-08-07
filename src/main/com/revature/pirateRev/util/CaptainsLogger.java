@@ -45,8 +45,12 @@ public class CaptainsLogger {
 
 		@Override
 		public String toString() {
-			
-			return logLevel + " - " + timestamp.getHour()+":"+timestamp.getMinute() + " - " + message;
+			int hourInt = timestamp.getHour();
+			String hour = hourInt < 10 ? "0" + hourInt : "" + hourInt;
+			int minuteInt = timestamp.getMinute();
+			String minute = minuteInt < 10 ? "0" + minuteInt : "" + minuteInt;
+
+			return logLevel + " - " + hour + ":" + minute + " - " + message;
 
 		}
 	}

@@ -9,6 +9,8 @@ import com.revature.pirateRev.exceptions.NoSuchElementException;
 import com.revature.pirateRev.models.Pirate;
 import com.revature.pirateRev.models.StoreFront;
 import com.revature.pirateRev.util.Arrays;
+import com.revature.pirateRev.util.CaptainsLogger;
+import com.revature.pirateRev.util.CaptainsLogger.LogLevel;
 
 
 public class Menu {
@@ -16,8 +18,10 @@ public class Menu {
 	private static Scanner sc = new Scanner(System.in);
 	private static String pirateInput;
 	private static StoreFrontDAO storeFrontDAO;
+	private static CaptainsLogger logger = CaptainsLogger.getLogger();
 
 	public static void open() {
+		logger.log(LogLevel.INFO, "Main menu options displayed...");
 		System.out.println("Welcome to the Pirate Supply Stores!\n");
 		do {
 
