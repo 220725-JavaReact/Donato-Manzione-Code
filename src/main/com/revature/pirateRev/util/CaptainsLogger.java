@@ -2,7 +2,7 @@ package com.revature.pirateRev.util;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class CaptainsLogger {
 	public static enum LogLevel {
@@ -17,12 +17,12 @@ public class CaptainsLogger {
 	}
 
 	public void log(LogLevel level, String message) {
-		CaptainsLog newLog = new CaptainsLog(level, LocalDate.now(), message);
+		CaptainsLog newLog = new CaptainsLog(level, LocalDateTime.now(), message);
 		writeToFile(newLog.toString());
 	}
- 
+
 	private void writeToFile(String message) {
-		try (FileWriter writer = new FileWriter("resources/logs/"+LocalDate.now().toString() + ".log", true)) {
+		try (FileWriter writer = new FileWriter("resources/logs/" + LocalDateTime.now().toLocalDate() + ".log", true)) {
 
 			writer.append(message + "\n");
 		} catch (IOException e) {
@@ -33,10 +33,10 @@ public class CaptainsLogger {
 
 	private class CaptainsLog {
 		LogLevel logLevel;
-		LocalDate timestamp;
+		LocalDateTime timestamp;
 		String message;
 
-		public CaptainsLog(LogLevel logLevel, LocalDate timestamp, String message) {
+		public CaptainsLog(LogLevel logLevel, LocalDateTime timestamp, String message) {
 			super();
 			this.logLevel = logLevel;
 			this.timestamp = timestamp;
@@ -45,7 +45,8 @@ public class CaptainsLogger {
 
 		@Override
 		public String toString() {
-			return logLevel + "\n" + timestamp + message;
+			
+			return logLevel + " - " + timestamp.getHour()+":"+timestamp.getMinute() + " - " + message;
 
 		}
 	}

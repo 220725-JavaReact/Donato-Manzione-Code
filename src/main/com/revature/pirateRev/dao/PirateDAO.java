@@ -30,6 +30,8 @@ public class PirateDAO implements DAO<Pirate> {
 			if (pir.getName().equals(name)) {
 				return pir;
 			}
+			
+			
 		}
 		throw new NoSuchElementException("There is no pirate called " + name);
 	}
