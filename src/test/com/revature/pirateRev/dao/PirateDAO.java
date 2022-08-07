@@ -1,4 +1,4 @@
-package tes.com.revature.pirateRev.dao;
+package test.com.revature.pirateRev.dao;
 
 import main.com.revature.pirateRev.dao.DAO;
 import main.com.revature.pirateRev.models.Pirate;
