@@ -1,15 +1,9 @@
 package main.com.revature.pirateRev.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-
-import main.com.revature.pirateRev.booty.TempStorage;
-
-import main.com.revature.pirateRev.collections.ArrayList;
 import main.com.revature.pirateRev.exceptions.NoSuchElementException;
 import main.com.revature.pirateRev.models.Pirate;
-import main.com.revature.pirateRev.util.Arrays;
 import main.com.revature.pirateRev.util.CaptainsLogger;
 import main.com.revature.pirateRev.util.ConnectionFactory;
 import main.com.revature.pirateRev.util.CaptainsLogger.LogLevel;

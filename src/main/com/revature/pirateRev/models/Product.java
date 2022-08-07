@@ -5,6 +5,7 @@ public class Product {
 	private double price;
 	private String description;
 
+	@SuppressWarnings("unused")
 	private enum category {
 		trinkets, clothingAndAccessories, magicTokensAndPotions, navigation, weaponry, howToGuides, miscellaneous
 	}
