@@ -45,7 +45,7 @@ public class CaptainsLogger {
 
 		@Override
 		public String toString() {
-			return logLevel + " - [" + timestamp + "] - " + message;
+			return logLevel + "\n" + timestamp + message;
 
 		}
 	}
