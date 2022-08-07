@@ -5,7 +5,7 @@ import main.com.revature.pirateRev.collections.ArrayList;
 public class Order {
 
 	private ArrayList<LineItem> lineItems;
-	private String storeFrontLocation;
+	private String storeLocation;
 	private double totalPrice;
 
 	public ArrayList<LineItem> getLineItems() {
@@ -25,7 +25,7 @@ public class Order {
 	}
 
 	public String getStoreFrontLocation() {
-		return storeFrontLocation;
+		return storeLocation;
 	}
 
 }
