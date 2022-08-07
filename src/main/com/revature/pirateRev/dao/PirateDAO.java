@@ -1,12 +1,13 @@
-package main.com.revature.pirateRev.dao;
+package com.revature.pirateRev.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import main.com.revature.pirateRev.exceptions.NoSuchElementException;
-import main.com.revature.pirateRev.models.Pirate;
-import main.com.revature.pirateRev.util.CaptainsLogger;
-import main.com.revature.pirateRev.util.ConnectionFactory;
-import main.com.revature.pirateRev.util.CaptainsLogger.LogLevel;
+
+import com.revature.pirateRev.exceptions.NoSuchElementException;
+import com.revature.pirateRev.models.Pirate;
+import com.revature.pirateRev.util.CaptainsLogger;
+import com.revature.pirateRev.util.CaptainsLogger.LogLevel;
+import com.revature.pirateRev.util.ConnectionFactory;
 
 public class PirateDAO implements DAO<Pirate> {
 	private static CaptainsLogger logger = CaptainsLogger.getLogger();

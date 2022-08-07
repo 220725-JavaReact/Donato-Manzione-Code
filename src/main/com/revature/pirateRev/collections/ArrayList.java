@@ -1,8 +1,8 @@
-package main.com.revature.pirateRev.collections;
+package com.revature.pirateRev.collections;
 
 import java.util.Arrays;
 
-import main.com.revature.pirateRev.exceptions.NoSuchElementException;
+import com.revature.pirateRev.exceptions.NoSuchElementException;
 
 public class ArrayList<T> {
 	private int length;
@@ -27,7 +27,7 @@ public class ArrayList<T> {
 		currentLastIndex++;
 
 		if (currentLastIndex == size - 1) {
-			backingArray = (T[]) resize(backingArray);
+			backingArray = resize(backingArray);
 		}
 	}
 
@@ -35,7 +35,7 @@ public class ArrayList<T> {
 		if (backingArray[index] == null) {
 			throw new NoSuchElementException("There are no elements at that index!");
 		} else {
-			return (T) backingArray[index];
+			return backingArray[index];
 		}
 
 	}
@@ -52,7 +52,7 @@ public class ArrayList<T> {
 
 	private T[] resize(T[] oldArray) {
 
-		T[] newArray = (T[]) Arrays.copyOf(oldArray, size + size / 2);
+		T[] newArray = Arrays.copyOf(oldArray, size + size / 2);
 
 		size = newArray.length;
 
@@ -66,7 +66,7 @@ public class ArrayList<T> {
 			System.out.println("\n\n   " + (i+1) + ") " + backingArray[i]);
 		}
 	}
-	
+
 	public boolean isEmpty() {
 		return currentLastIndex==0;
 	}

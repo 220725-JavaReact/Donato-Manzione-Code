@@ -1,11 +1,14 @@
-package main.com.revature.pirateRev.app;
+package com.revature.pirateRev.app;
 
-import main.com.revature.pirateRev.ui.Menu;
+import com.revature.pirateRev.ui.Menu;
+import com.revature.pirateRev.util.CaptainsLogger;
+import com.revature.pirateRev.util.CaptainsLogger.LogLevel;
 
 public class Driver {
+	private static CaptainsLogger logger = CaptainsLogger.getLogger();
 
 	public static void main(String[] args) {
-		
+		logger.log(LogLevel.INFO, "\nApplication starting up...\n\n");
 		Menu.open();
 
 	}

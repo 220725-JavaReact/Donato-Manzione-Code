@@ -1,14 +1,14 @@
-package main.com.revature.pirateRev.util;
+package com.revature.pirateRev.util;
 
-import main.com.revature.pirateRev.models.Pirate;
-import main.com.revature.pirateRev.models.Product;
-import main.com.revature.pirateRev.models.StoreFront;
+import com.revature.pirateRev.models.Pirate;
+import com.revature.pirateRev.models.Product;
+import com.revature.pirateRev.models.StoreFront;
 
 public class Arrays {
 
 	public static enum PrintType {
 		JUST_NAME
-	};
+	}
 
 	public static enum PrintObject {
 		PIRATE, STORE_FRONT, LINE_ITEM, PRODUCT
@@ -54,9 +54,9 @@ public class Arrays {
 					StoreFront store = (StoreFront) array[i];
 
 					System.out.println(store.getName());
-					
-					
-					
+
+
+
 				} else {
 					Product product = (Product) array[i];
 					if (array[0] == null) {

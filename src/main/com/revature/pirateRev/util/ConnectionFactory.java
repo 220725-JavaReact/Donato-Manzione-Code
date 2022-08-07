@@ -1,9 +1,9 @@
-package main.com.revature.pirateRev.util;
+package com.revature.pirateRev.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import main.com.revature.pirateRev.util.CaptainsLogger.LogLevel;
+import com.revature.pirateRev.util.CaptainsLogger.LogLevel;
 
 public class ConnectionFactory {
 	private static CaptainsLogger logger = CaptainsLogger.getLogger();

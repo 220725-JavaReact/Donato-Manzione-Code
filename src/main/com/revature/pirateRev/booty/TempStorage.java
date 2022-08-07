@@ -1,12 +1,12 @@
-package main.com.revature.pirateRev.booty;
-import main.com.revature.pirateRev.collections.ArrayList;
-import main.com.revature.pirateRev.models.Pirate;
-import main.com.revature.pirateRev.models.StoreFront;
+package com.revature.pirateRev.booty;
+import com.revature.pirateRev.collections.ArrayList;
+import com.revature.pirateRev.models.Pirate;
+import com.revature.pirateRev.models.StoreFront;
 
 public class TempStorage {
 
-	public static ArrayList<Pirate> pirates = new ArrayList<Pirate>();
-	public static ArrayList<StoreFront> storeFronts = new ArrayList<StoreFront>() {{
+	public static ArrayList<Pirate> pirates = new ArrayList<>();
+	public static ArrayList<StoreFront> storeFronts = new ArrayList<>() {{
 
 			add(new StoreFront("Captain Branch"));
 
@@ -20,6 +20,6 @@ public class TempStorage {
 			add(new StoreFront("Surgeon Branch"));
 			add(new StoreFront("Cook Branch"));
 		}};
-	
-	
+
+
 }

@@ -1,4 +1,4 @@
-package main.com.revature.pirateRev.models;
+package com.revature.pirateRev.models;
 
 public class Product {
 	private String name;

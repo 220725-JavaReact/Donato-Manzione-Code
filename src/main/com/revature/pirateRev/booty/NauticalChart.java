@@ -1,11 +1,16 @@
-package main.com.revature.pirateRev.booty;
+package com.revature.pirateRev.booty;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class NauticalChart {
 
-	public static Map<String, String> map = new HashMap<>() {
+	public static Map<String, String> map = new HashMap<String,String>() {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
 		{
 
 			put("Captain Branch", "Fleur Marie: 44° 42' 59.22\" N -75° 28' 34.68\" W");

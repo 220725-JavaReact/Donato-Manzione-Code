@@ -1,16 +1,14 @@
-package main.com.revature.pirateRev.ui;
+package com.revature.pirateRev.ui;
 
 
 import java.util.Scanner;
 
-import main.com.revature.pirateRev.dao.PirateDAO;
-import main.com.revature.pirateRev.dao.StoreFrontDAO;
-import main.com.revature.pirateRev.exceptions.NoSuchElementException;
-import main.com.revature.pirateRev.models.Pirate;
-import main.com.revature.pirateRev.models.StoreFront;
-import main.com.revature.pirateRev.util.Arrays;
-import main.com.revature.pirateRev.util.Arrays.PrintObject;
-import main.com.revature.pirateRev.util.Arrays.PrintType;
+import com.revature.pirateRev.dao.StoreFrontDAO;
+import com.revature.pirateRev.dao.PirateDAO;
+import com.revature.pirateRev.exceptions.NoSuchElementException;
+import com.revature.pirateRev.models.Pirate;
+import com.revature.pirateRev.models.StoreFront;
+import com.revature.pirateRev.util.Arrays;
 
 
 public class Menu {
@@ -110,7 +108,7 @@ public class Menu {
 				System.out.println("\n\nThis store was pillaged\n\nCome back another time I suppose");
 			}
 			store.getProducts().print();
-			
+
 			break;
 		case "first mate":
 		case "firstmate":
@@ -142,13 +140,13 @@ public class Menu {
 		}
 
 
-		
+
 		Arrays.printArray(storeFrontDAO.readAll());
 		System.out.println("\nEnter the name of the store\nyou'd like to check out:\n");
-		
-	
-		
-		
+
+
+
+
 
 	}
 }

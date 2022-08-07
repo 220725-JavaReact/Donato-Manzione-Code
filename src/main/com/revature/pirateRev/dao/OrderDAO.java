@@ -1,12 +1,12 @@
-package main.com.revature.pirateRev.dao;
-import main.com.revature.pirateRev.models.Order;
+package com.revature.pirateRev.dao;
+import com.revature.pirateRev.models.Order;
 
 public class OrderDAO implements DAO<Order> {
 
 	@Override
 	public void create(Order obj) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -18,13 +18,13 @@ public class OrderDAO implements DAO<Order> {
 	@Override
 	public void update(Order obj) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void delete(String name) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

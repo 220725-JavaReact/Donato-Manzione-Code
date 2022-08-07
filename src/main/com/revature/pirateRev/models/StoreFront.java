@@ -1,9 +1,9 @@
-package main.com.revature.pirateRev.models;
+package com.revature.pirateRev.models;
 
 
 
-import main.com.revature.pirateRev.booty.NauticalChart;
-import main.com.revature.pirateRev.collections.ArrayList;
+import com.revature.pirateRev.booty.NauticalChart;
+import com.revature.pirateRev.collections.ArrayList;
 
 public class StoreFront {
 	private String name;
@@ -25,7 +25,7 @@ public class StoreFront {
 		return name;
 	}
 
-	
+
 	@Override
 	public String toString() {
 		return  "\t"+name.toUpperCase() +"\n\tLocation:\n\t\t" + address + "\n\n";
@@ -33,7 +33,7 @@ public class StoreFront {
 
 	public ArrayList<Product> getProducts() {
 		return products;
-		
+
 	}
 
 	public ArrayList<Order> getOrders() {
@@ -59,6 +59,6 @@ public class StoreFront {
 	public void setProducts(ArrayList<Product> products) {
 		this.products = products;
 	}
-	
+
 
 }

@@ -1,4 +1,4 @@
-package main.com.revature.pirateRev.dao;
+package com.revature.pirateRev.dao;
 
 public interface DAO<T> {
 	public void create(T obj);
