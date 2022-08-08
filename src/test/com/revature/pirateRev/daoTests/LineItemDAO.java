@@ -1,11 +1,9 @@
 package com.revature.pirateRev.daoTests;
 
-import com.revature.pirateRev.models.Pirate;
-
-public class ProductDAO implements DAO<Pirate> {
+public class LineItemDAO<LineItem> implements DAO<LineItem> {
 
 	@Override
-	public void testCreate(Pirate obj) {
+	public void testCreate(LineItem obj) {
 		
 		
 	}
@@ -17,8 +15,8 @@ public class ProductDAO implements DAO<Pirate> {
 	}
 
 	@Override
-	public void testUpdate(Pirate obj) {
-		
+	public void testUpdate(LineItem obj) {
+		    
 		
 	}
 
@@ -30,8 +28,7 @@ public class ProductDAO implements DAO<Pirate> {
 
 	@Override
 	public void testReadAll() {
-		
-		
+
 	}
 
 }
