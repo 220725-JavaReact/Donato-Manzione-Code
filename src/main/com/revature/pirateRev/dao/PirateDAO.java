@@ -17,7 +17,7 @@ public class PirateDAO implements DAO<Pirate> {
 	public void create(Pirate pirate) {
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 
-			PreparedStatement ps = conn.prepareStatement("insert into pirates");
+			PreparedStatement ps = conn.prepareStatement("insert into piratesd");
 			
 		} catch (SQLException e) {
 			logger.log(LogLevel.ERROR,

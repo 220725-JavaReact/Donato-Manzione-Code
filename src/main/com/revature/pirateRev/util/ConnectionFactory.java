@@ -25,12 +25,17 @@ public class ConnectionFactory {
 		Connection conn = null;
 
 		try {
+			System.out.println("I'm here");
 			conn = DriverManager.getConnection("pirate-supply-store.cbvhz1czalox.us-east-1.rds.amazonaws.com",
-					"dmanzione", "Donato12345-");
+					"dmanzione", "12345678");
+			
+			return conn;
 
 		} catch (SQLException e) {
 			logger.log(LogLevel.ERROR, ("Could not get connection to database intance: " + e.getMessage()
-					+ "\n\nStack trace:\n\n" + e.getStackTrace().toString()));
+					+ "\n\nStack trace:\n\n"+ e));
+			
+			
 
 		}
 
