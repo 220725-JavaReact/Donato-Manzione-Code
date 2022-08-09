@@ -1,6 +1,7 @@
 package com.revature.pirateRev.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.revature.pirateRev.exceptions.NoSuchElementException;
@@ -16,6 +17,8 @@ public class PirateDAO implements DAO<Pirate> {
 	public void create(Pirate pirate) {
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 
+			PreparedStatement ps = conn.prepareStatement("insert into pirates");
+			
 		} catch (SQLException e) {
 			logger.log(LogLevel.ERROR,
 					"You not create connection to database. New pirate could not be added.\n\n\tException: "
