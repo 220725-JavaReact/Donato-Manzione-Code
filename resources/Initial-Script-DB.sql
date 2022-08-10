@@ -35,15 +35,17 @@ create table products (
 		references store_front (store_name)
 )
 create table line_item (
+	line_item_id serial primary key,
 	product_id int not null,
 	order_id int not null,
 	quantity int,
-	primary key(order_id, product_id),
 	foreign key (order_id)
 		references orders (order_id),
 	foreign key (product_id)
-		references products (product_name)
+		references products (product_id)
 )
+
+
 
 insert
 	into
@@ -111,8 +113,130 @@ values(
 ('First Mate Branch','The Pirate Code for Dummies', 30.00,'howToGuides'),
 ('First Mate Branch', 'Blackbeard: His Life and Times',35.00,'howToGuides')
 
+insert into products (store_id, product_name, price, category)
+values(
+'Quartermaster Branch','Eye Patch',10.00,'clothingAndAccessories'
+
+),
+('Quartermaster Branch','Marlinspike',8.00,'navigation'),
+('Quartermaster Branch','Pillage and Plunder: The Definitive Guide', 15.00,'howToGuides'),
+('Quartermaster Branch','Housewife',20.00,'miscellaneous'),
+('Quartermaster Branch','Jar of Dirt',100.00, 'magicTokensAndPotions'),
+('Quartermaster Branch','Pair of Dice',3.00,'entertainment'),
+('Quartermaster Branch','Pipe',5.00,'entertainment'),
+('Quartermaster Branch','Tobacco',10.00,'entertainment'),
+('Quartermaster Branch','Sailor Palm',10.00,'navigation'),
+('Quartermaster Branch', 'Length of Rope',50.00,'navigation'),
+('Quartermaster Branch', '	Deck of Cards', 25.00, 'entertainment'),
+('Quartermaster Branch', 'Pistol',75.00,'weaponry'),
+('Quartermaster Branch', 'Sword',65.00,'weaponry'),
+('Quartermaster Branch','The Pirate Code for Dummies', 30.00,'howToGuides'),
+('Quartermaster Branch', 'Blackbeard: His Life and Times',35.00,'howToGuides')
 
 
+insert into products (store_id, product_name, price, category)
+values(
+'Sailing Master Branch','Eye Patch',10.00,'clothingAndAccessories'
+
+),
+('Sailing Master Branch','Marlinspike',8.00,'navigation'),
+('Sailing Master Branch','Pillage and Plunder: The Definitive Guide', 15.00,'howToGuides'),
+('Sailing Master Branch','Housewife',20.00,'miscellaneous'),
+('Sailing Master Branch','Jar of Dirt',100.00, 'magicTokensAndPotions'),
+('Sailing Master Branch','Pair of Dice',3.00,'entertainment'),
+('Sailing Master Branch','Pipe',5.00,'entertainment'),
+('Sailing Master Branch','Tobacco',10.00,'entertainment'),
+('Sailing Master Branch','Sailor Palm',10.00,'navigation'),
+('Sailing Master Branch', 'Length of Rope',50.00,'navigation'),
+('Sailing Master Branch', '	Deck of Cards', 25.00, 'entertainment'),
+('Sailing Master Branch', 'Pistol',75.00,'weaponry'),
+('Sailing Master Branch', 'Sword',65.00,'weaponry'),
+('Sailing Master Branch','The Pirate Code for Dummies', 30.00,'howToGuides'),
+('Sailing Master Branch', 'Blackbeard: His Life and Times',35.00,'howToGuides')
 
 
+insert into products (store_id, product_name, price, category)
+values(
+'Powder Monkey Branch','Eye Patch',10.00,'clothingAndAccessories'
+
+),
+('Powder Monkey Branch','Marlinspike',8.00,'navigation'),
+('Powder Monkey Branch','Pillage and Plunder: The Definitive Guide', 15.00,'howToGuides'),
+('Powder Monkey Branch','Housewife',20.00,'miscellaneous'),
+('Powder Monkey Branch','Jar of Dirt',100.00, 'magicTokensAndPotions'),
+('Powder Monkey Branch','Pair of Dice',3.00,'entertainment'),
+('Powder Monkey Branch','Pipe',5.00,'entertainment'),
+('Powder Monkey Branch','Tobacco',10.00,'entertainment'),
+('Powder Monkey Branch','Sailor Palm',10.00,'navigation'),
+('Powder Monkey Branch', 'Length of Rope',50.00,'navigation'),
+('Powder Monkey Branch', '	Deck of Cards', 25.00, 'entertainment'),
+('Powder Monkey Branch', 'Pistol',75.00,'weaponry'),
+('Powder Monkey Branch', 'Sword',65.00,'weaponry'),
+('Powder Monkey Branch','The Pirate Code for Dummies', 30.00,'howToGuides'),
+('Powder Monkey Branch', 'Blackbeard: His Life and Times',35.00,'howToGuides')
+
+
+insert into products (store_id, product_name, price, category)
+values(
+'Boatswain Branch','Eye Patch',10.00,'clothingAndAccessories'
+
+),
+('Boatswain Branch','Marlinspike',8.00,'navigation'),
+('Boatswain Branch','Pillage and Plunder: The Definitive Guide', 15.00,'howToGuides'),
+('Boatswain Branch','Housewife',20.00,'miscellaneous'),
+('Boatswain Branch','Jar of Dirt',100.00, 'magicTokensAndPotions'),
+('Boatswain Branch','Pair of Dice',3.00,'entertainment'),
+('Boatswain Branch','Pipe',5.00,'entertainment'),
+('Boatswain Branch','Tobacco',10.00,'entertainment'),
+('Boatswain Branch','Sailor Palm',10.00,'navigation'),
+('Boatswain Branch', 'Length of Rope',50.00,'navigation'),
+('Boatswain Branch', '	Deck of Cards', 25.00, 'entertainment'),
+('Boatswain Branch', 'Pistol',75.00,'weaponry'),
+('Boatswain Branch', 'Sword',65.00,'weaponry'),
+('Boatswain Branch','The Pirate Code for Dummies', 30.00,'howToGuides'),
+('Boatswain Branch', 'Blackbeard: His Life and Times',35.00,'howToGuides')
+
+
+insert into products (store_id, product_name, price, category)
+values(
+'Surgeon Branch','Eye Patch',10.00,'clothingAndAccessories'
+
+),
+('Surgeon Branch','Marlinspike',8.00,'navigation'),
+('Surgeon Branch','Pillage and Plunder: The Definitive Guide', 15.00,'howToGuides'),
+('Surgeon Branch','Housewife',20.00,'miscellaneous'),
+('Surgeon Branch','Jar of Dirt',100.00, 'magicTokensAndPotions'),
+('Surgeon Branch','Pair of Dice',3.00,'entertainment'),
+('Surgeon Branch','Pipe',5.00,'entertainment'),
+('Surgeon Branch','Tobacco',10.00,'entertainment'),
+('Surgeon Branch','Sailor Palm',10.00,'navigation'),
+('Surgeon Branch', 'Length of Rope',50.00,'navigation'),
+('Surgeon Branch', '	Deck of Cards', 25.00, 'entertainment'),
+('Surgeon Branch', 'Pistol',75.00,'weaponry'),
+('Surgeon Branch', 'Sword',65.00,'weaponry'),
+('Surgeon Branch','The Pirate Code for Dummies', 30.00,'howToGuides'),
+('Surgeon Branch', 'Blackbeard: His Life and Times',35.00,'howToGuides')
+
+insert into products (store_id, product_name, price, category)
+values(
+'Cook Branch','Eye Patch',10.00,'clothingAndAccessories'
+
+),
+('Cook Branch','Marlinspike',8.00,'navigation'),
+('Cook Branch','Pillage and Plunder: The Definitive Guide', 15.00,'howToGuides'),
+('Cook Branch','Housewife',20.00,'miscellaneous'),
+('Cook Branch','Jar of Dirt',100.00, 'magicTokensAndPotions'),
+('Cook Branch','Pair of Dice',3.00,'entertainment'),
+('Cook Branch','Pipe',5.00,'entertainment'),
+('Cook Branch','Tobacco',10.00,'entertainment'),
+('Cook Branch','Sailor Palm',10.00,'navigation'),
+('Cook Branch', 'Length of Rope',50.00,'navigation'),
+('Cook Branch', '	Deck of Cards', 25.00, 'entertainment'),
+('Cook Branch', 'Pistol',75.00,'weaponry'),
+('Cook Branch', 'Sword',65.00,'weaponry'),
+('Cook Branch','The Pirate Code for Dummies', 30.00,'howToGuides'),
+('Cook Branch', 'Blackbeard: His Life and Times',35.00,'howToGuides')
+
+
+select * from products;
 

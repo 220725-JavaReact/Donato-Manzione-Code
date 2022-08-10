@@ -22,7 +22,7 @@ public class OrderDAO implements DAO<Order> {
 	}
 
 	@Override
-	public void delete(String name) {
+	public void delete(Order order) {
 		// TODO Auto-generated method stub
 
 	}

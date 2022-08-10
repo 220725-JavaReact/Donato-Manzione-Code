@@ -31,13 +31,13 @@ public class StoreFrontDAO implements DAO<StoreFront> {
 
 	@Override
 	public void update(StoreFront obj) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
-	public void delete(String name) {
-		// TODO Auto-generated method stub
+	public void delete(StoreFront store) {
+		
 
 	}
 

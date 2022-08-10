@@ -1,5 +1,7 @@
 package com.revature.pirateRev.dao;
 
+import com.revature.pirateRev.models.LineItem;
+
 public interface DAO<T> {
 	public void create(T obj);
 
@@ -7,8 +9,8 @@ public interface DAO<T> {
 
 	public void update(T obj);
 
-	public void delete(String name);
-
 	public Object[] readAll();
+
+	void delete(T obj);
 
 }

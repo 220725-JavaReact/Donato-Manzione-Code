@@ -25,6 +25,7 @@ public class PirateDAO implements DAO<Pirate> {
 			ps.setString(1, pirate.getName());
 			ps.setString(2, pirate.getAddress());
 			ps.setString(3, pirate.getEmail());
+			ps.execute();
 		} catch (SQLException e) {
 			logger.log(LogLevel.ERROR,
 					"You not create connection to database. New pirate could not be added.\n\n\tException: "
@@ -54,6 +55,7 @@ public class PirateDAO implements DAO<Pirate> {
 			Pirate pirate = null;
 			while (rs.next()) {
 				pirate = new Pirate();
+				pirate.setId(rs.getInt("pirate_id"));
 				pirate.setName(rs.getString("pirate_name"));
 				pirate.setEmail(rs.getString("email"));
 				pirate.setAddress(rs.getString("address"));
@@ -72,7 +74,7 @@ public class PirateDAO implements DAO<Pirate> {
 	}
 
 	@Override
-	public void delete(String name) {
+	public void delete(Pirate pirate) {
 		// TODO Auto-generated method stub
 
 	}

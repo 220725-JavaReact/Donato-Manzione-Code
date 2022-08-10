@@ -4,7 +4,7 @@ public class Product {
 	private String name;
 	private double price;
 	private String description;
-
+	private int productId;
 	private String store;
 
 	public String getCategory() {
@@ -57,6 +57,14 @@ public class Product {
 	@Override
 	public String toString() {
 		return "\n\n\t" + name + " --- $" + price + "\n\t\tCategory: " + category + "\n\t\tLocation: " + store;
+	}
+
+	public int getProductId() {
+		return productId;
+	}
+
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
 
 }

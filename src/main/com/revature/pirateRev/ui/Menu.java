@@ -3,12 +3,10 @@ package com.revature.pirateRev.ui;
 import java.util.Scanner;
 
 import com.revature.pirateRev.dao.StoreFrontDAO;
-import com.revature.pirateRev.collections.ArrayList;
 import com.revature.pirateRev.dao.PirateDAO;
 import com.revature.pirateRev.dao.ProductDAO;
 import com.revature.pirateRev.exceptions.NoSuchElementException;
 import com.revature.pirateRev.models.Pirate;
-import com.revature.pirateRev.models.StoreFront;
 import com.revature.pirateRev.util.Arrays;
 import com.revature.pirateRev.util.CaptainsLogger;
 import com.revature.pirateRev.util.CaptainsLogger.LogLevel;

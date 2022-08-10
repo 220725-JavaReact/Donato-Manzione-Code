@@ -26,4 +26,9 @@ public class NauticalChart {
 		}
 	};
 
+	public static String get(String name) {
+		
+		return map.get(name);
+	}
+
 }

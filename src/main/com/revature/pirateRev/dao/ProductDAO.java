@@ -16,6 +16,28 @@ public class ProductDAO implements DAO<Product> {
 
 	}
 
+	
+	public Product readById(int id) {
+
+		Product product = null;
+		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+			String query = "select * from products where product_id =" + id + ";";
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
+
+			product = new Product();
+			product.setStore(rs.getString("store_id"));
+			product.setPrice(rs.getDouble("price"));
+			product.setName(rs.getString("product_name"));
+			product.setCategory(rs.getString("category"));
+			product.setProductId(id);
+
+		} catch (SQLException e) {
+
+			System.out.println(e);
+		}
+		return product;
+	}
 	@Override
 	public Product readByName(String name) {
 
@@ -44,7 +66,7 @@ public class ProductDAO implements DAO<Product> {
 	}
 
 	@Override
-	public void delete(String name) {
+	public void delete(Product product) {
 
 	}
 

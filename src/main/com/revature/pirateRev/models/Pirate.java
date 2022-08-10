@@ -7,6 +7,7 @@ public class Pirate {
 	private String address;
 	private String email;
 	private ArrayList<Order> orders;
+	private int pirateID;
 
 	public String getName() {
 		return name;
@@ -47,5 +48,12 @@ public class Pirate {
 		return email;
 	}
 
+	public void setId(int pirateID) {
+		this.pirateID = pirateID;
+		
+	}
 
+	public int getId() {
+		return this.pirateID;
+	}
 }
