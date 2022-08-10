@@ -42,7 +42,7 @@ public class StoreFrontDAO implements DAO<StoreFront> {
 	}
 
 	@Override
-	public Object[] readAll() {
+	public ArrayList<StoreFront> readAll() {
 		ArrayList<StoreFront> stores = new ArrayList<StoreFront>();
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 			String query = "select * from store_front";
@@ -56,10 +56,10 @@ public class StoreFrontDAO implements DAO<StoreFront> {
 				stores.add(store);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
-		return stores.getAllElements();
+		return stores;
 	}
 
 }

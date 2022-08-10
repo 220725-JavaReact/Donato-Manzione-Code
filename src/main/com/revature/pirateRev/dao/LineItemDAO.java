@@ -92,7 +92,7 @@ public class LineItemDAO implements DAO<LineItem> {
 	}
 
 	@Override
-	public Object[] readAll() {
+	public ArrayList<LineItem> readAll() {
 		String query = "SELECT * FROM line_item";
 		ArrayList<LineItem> lineItems = new ArrayList<LineItem>();
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
@@ -112,7 +112,7 @@ public class LineItemDAO implements DAO<LineItem> {
 
 			e.printStackTrace();
 		}
-		return lineItems.getAllElements();
+		return lineItems;
 	}
 	
 	public ArrayList<LineItem> readAllByOrderID(int orderID){

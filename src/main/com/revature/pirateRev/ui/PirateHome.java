@@ -6,10 +6,10 @@ import com.revature.pirateRev.collections.ArrayList;
 import com.revature.pirateRev.dao.OrderDAO;
 import com.revature.pirateRev.dao.ProductDAO;
 import com.revature.pirateRev.dao.StoreFrontDAO;
+import com.revature.pirateRev.models.Order;
 import com.revature.pirateRev.models.Pirate;
 import com.revature.pirateRev.models.Product;
 import com.revature.pirateRev.models.StoreFront;
-import com.revature.pirateRev.util.Arrays;
 
 public class PirateHome {
 
@@ -70,7 +70,8 @@ public class PirateHome {
 	}
 
 	private static void showPastOrders() {
-		Object[] myOrders = orderDAO.readAllByPirateName(pirate.getName());
+		ArrayList<Order> myOrders = orderDAO.readAllByPirateName(pirate.getName());
+		myOrders.print();
 
 	}
 
@@ -124,7 +125,7 @@ public class PirateHome {
 
 	private static void pickStore() {
 		System.out.println("\nPlease select one of our stores: ");
-		ArrayList stores = new ArrayList(storeFrontDAO.readAll());
+		ArrayList<StoreFront> stores = storeFrontDAO.readAll();
 		stores.print();
 		System.out.println("\n\nPlease choose which store you want to check out");
 
@@ -132,7 +133,7 @@ public class PirateHome {
 
 		pirateInput = sc.nextLine();
 
-		Object[] products = null;
+		ArrayList<Product> products = null;
 		StoreFront store = null;
 		switch (pirateInput.trim().toLowerCase()) {
 		case "1":
@@ -220,12 +221,12 @@ public class PirateHome {
 
 	}
 
-	private static void chooseProduct(StoreFront store, Object[] products) {
+	private static void chooseProduct(StoreFront store, ArrayList<Product> products) {
 
 		if (products == null)
 			System.out.println("\n\n" + store.getName() + " has been looted!\n\nThere are no more products in here!");
-		
-		Arrays.printArrayNumbered(products);
+
+		products.print();
 
 		System.out.println("\n\nWould you like to purchase an item?");
 		System.out.println("\n\n(1) Yes");

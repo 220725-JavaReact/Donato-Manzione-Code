@@ -46,7 +46,7 @@ public class PirateDAO implements DAO<Pirate> {
 	}
 
 	@Override
-	public Object[] readAll() {
+	public ArrayList<Pirate> readAll() {
 		ArrayList<Pirate> pirates = new ArrayList<Pirate>();
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 			String query = "select * from pirates";
@@ -65,7 +65,7 @@ public class PirateDAO implements DAO<Pirate> {
 
 			e.printStackTrace();
 		}
-		return pirates.getAllElements();
+		return pirates;
 	}
 
 	@Override

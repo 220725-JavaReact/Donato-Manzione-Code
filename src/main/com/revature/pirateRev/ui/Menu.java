@@ -2,12 +2,10 @@ package com.revature.pirateRev.ui;
 
 import java.util.Scanner;
 
-import com.revature.pirateRev.dao.StoreFrontDAO;
+import com.revature.pirateRev.collections.ArrayList;
 import com.revature.pirateRev.dao.PirateDAO;
-import com.revature.pirateRev.dao.ProductDAO;
 import com.revature.pirateRev.exceptions.NoSuchElementException;
 import com.revature.pirateRev.models.Pirate;
-import com.revature.pirateRev.util.Arrays;
 import com.revature.pirateRev.util.CaptainsLogger;
 import com.revature.pirateRev.util.CaptainsLogger.LogLevel;
 
@@ -15,9 +13,7 @@ public class Menu {
 	private static PirateDAO pirateDAO = new PirateDAO();
 	private static Scanner sc = new Scanner(System.in);
 	private static String pirateInput;
-	private static StoreFrontDAO storeFrontDAO = new StoreFrontDAO();
 	private static CaptainsLogger logger = CaptainsLogger.getLogger();
-	private static ProductDAO productDAO = new ProductDAO();
 
 	public static void open() {
 		logger.log(LogLevel.INFO, "Main menu options displayed...");
@@ -78,15 +74,15 @@ public class Menu {
 
 	private static void logIn() {
 
-		Object[] pirates = pirateDAO.readAll();
-		if (pirates[0] == null) {
+		ArrayList<Pirate> pirates = pirateDAO.readAll();
+		if (pirates.getElementAtIndex(0) == null) {
 			System.out.println("\nNo pirates registered!");
 			return;
 		}
 
 		System.out.println("\nWhich pirate are you then?\n");
 
-		Arrays.printArray(pirates, Arrays.PrintType.JUST_NAME, Arrays.PrintObject.PIRATE);
+		pirates.print();
 
 		System.out.println("\nEnter name: \n");
 

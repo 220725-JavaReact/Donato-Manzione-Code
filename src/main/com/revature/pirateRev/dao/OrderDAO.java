@@ -86,7 +86,7 @@ public class OrderDAO implements DAO<Order> {
 	}
 
 	@Override
-	public Object[] readAll() {
+	public ArrayList<Order> readAll() {
 		String query = "SELECT * FROM orders";
 		ArrayList<Order> orders = new ArrayList<Order>();
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
@@ -107,10 +107,10 @@ public class OrderDAO implements DAO<Order> {
 
 			System.out.println(e);
 		}
-		return orders.getAllElements();
+		return orders;
 	}
 
-	public Object[] readAllByPirateName(String name) {
+	public ArrayList<Order> readAllByPirateName(String name) {
 		Pirate pirate = pirateDAO.readByName(name);
 
 		String query = "SELECT * FROM orders WHERE pirate_id = " + pirate.getId() + ";";
@@ -133,7 +133,7 @@ public class OrderDAO implements DAO<Order> {
 
 			System.out.println(e);
 		}
-		return orders.getAllElements();
+		return orders;
 
 	}
 

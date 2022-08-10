@@ -1,5 +1,6 @@
 package com.revature.pirateRev.dao;
 
+import com.revature.pirateRev.collections.ArrayList;
 import com.revature.pirateRev.models.LineItem;
 
 public interface DAO<T> {
@@ -9,7 +10,7 @@ public interface DAO<T> {
 
 	public void update(T obj);
 
-	public Object[] readAll();
+	public ArrayList<T> readAll();
 
 	void delete(T obj);
 
