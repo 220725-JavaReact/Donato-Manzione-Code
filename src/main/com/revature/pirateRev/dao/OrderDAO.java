@@ -33,4 +33,9 @@ public class OrderDAO implements DAO<Order> {
 		return null;
 	}
 
+	public Object[] readAllByPirateName() {
+		
+		return null;
+	}
+
 }

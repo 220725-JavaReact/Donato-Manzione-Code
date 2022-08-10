@@ -1,10 +1,11 @@
 package com.revature.pirateRev.ui;
 
-
 import java.util.Scanner;
 
 import com.revature.pirateRev.dao.StoreFrontDAO;
+import com.revature.pirateRev.collections.ArrayList;
 import com.revature.pirateRev.dao.PirateDAO;
+import com.revature.pirateRev.dao.ProductDAO;
 import com.revature.pirateRev.exceptions.NoSuchElementException;
 import com.revature.pirateRev.models.Pirate;
 import com.revature.pirateRev.models.StoreFront;
@@ -12,13 +13,13 @@ import com.revature.pirateRev.util.Arrays;
 import com.revature.pirateRev.util.CaptainsLogger;
 import com.revature.pirateRev.util.CaptainsLogger.LogLevel;
 
-
 public class Menu {
 	private static PirateDAO pirateDAO = new PirateDAO();
 	private static Scanner sc = new Scanner(System.in);
 	private static String pirateInput;
-	private static StoreFrontDAO storeFrontDAO;
+	private static StoreFrontDAO storeFrontDAO = new StoreFrontDAO();
 	private static CaptainsLogger logger = CaptainsLogger.getLogger();
+	private static ProductDAO productDAO = new ProductDAO();
 
 	public static void open() {
 		logger.log(LogLevel.INFO, "Main menu options displayed...");
@@ -39,11 +40,12 @@ public class Menu {
 			case "register":
 				register();
 				break;
+
 			case "x":
-				System.out.println("Goodbye!");
+				exit();
 				break;
 			default:
-				System.out.println("Wrong Input!");
+				System.out.println("\n\nWrong Input!");
 				break;
 
 			}
@@ -51,6 +53,14 @@ public class Menu {
 		} while (!pirateInput.equals("x"));
 
 		sc.close();
+	}
+
+	static void exit() {
+		System.out.println("\n\n\tReveal our location and you're dead...");
+
+		logger.log(LogLevel.INFO, "...Exiting system...");
+		System.exit(0);
+
 	}
 
 	private static void register() {
@@ -64,7 +74,7 @@ public class Menu {
 		pirateDAO.create(newPirate);
 		System.out.println("\nThis is your info:\n" + newPirate + "\n");
 
-		logIn();
+		PirateHome.start(newPirate);
 
 	}
 
@@ -75,8 +85,6 @@ public class Menu {
 			System.out.println("\nNo pirates registered!");
 			return;
 		}
-
-		System.out.println("\nYou pass this point at your peril");
 
 		System.out.println("\nWhich pirate are you then?\n");
 
@@ -89,68 +97,14 @@ public class Menu {
 		try {
 			pirate = pirateDAO.readByName(pirateInput);
 		} catch (NoSuchElementException e) {
+			System.out.println("There is no such pirate\n\nTry again");
+
 			return;
 		}
 
-		System.out.println("\nHere is your information: \n" + pirate + "\n");
-
-		System.out.println("\nPlease select one of our stores: ");
-
-		Arrays.printArray(storeFrontDAO.readAll());
-
-		System.out.println("\n\nPlease choose which store you want to check out");
-
-		System.out.println("\n\nType in the number:");
-
-		pirateInput = sc.nextLine();
-
-		switch (pirateInput.trim().toLowerCase()) {
-		case "1":
-		case "one":
-			StoreFront store = storeFrontDAO.readByName("captain");
-			if(store.getProducts().isEmpty()) {
-				System.out.println("\n\nThis store was pillaged\n\nCome back another time I suppose");
-			}
-			store.getProducts().print();
-
-			break;
-		case "first mate":
-		case "firstmate":
-		case "first":
-			break;
-		case "quartermaster":
-			break;
-		case "sailing master":
-		case "sailingmaster":
-		case "sailing":
-			break;
-		case "gunner":
-			break;
-		case "powder monkey":
-		case "powder":
-		case "monkey":
-		case "powdermonkey":
-			break;
-		case "boatswain":
-			break;
-		case "surgeon":
-			break;
-		case "cook":
-			break;
-		default:
-			System.out.println("\n\nNo such branch! Are you sure you typed it in correctly?");
-			break;
-
-		}
-
-
-
-		Arrays.printArray(storeFrontDAO.readAll());
-		System.out.println("\nEnter the name of the store\nyou'd like to check out:\n");
-
-
-
-
-
+		PirateHome.start(pirate);
 	}
+
+	
+
 }

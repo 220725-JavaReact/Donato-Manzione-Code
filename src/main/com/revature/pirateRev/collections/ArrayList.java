@@ -1,10 +1,11 @@
 package com.revature.pirateRev.collections;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 import com.revature.pirateRev.exceptions.NoSuchElementException;
 
-public class ArrayList<T> {
+public class ArrayList<T> implements Iterable<T> {
 	private int length;
 	private int size;
 	private int currentLastIndex;
@@ -18,6 +19,13 @@ public class ArrayList<T> {
 		this.currentLastIndex = 0;
 		this.backingArray = (T[]) new Object[10];
 
+	}
+
+	public ArrayList(T[] arr) {
+		this.backingArray = arr;
+		this.length = arr.length;
+		this.size = (arr.length > 10) ? (arr.length + (arr.length / 2)) : 10;
+		this.currentLastIndex = arr.length - 1;
 	}
 
 	public void add(T data) {
@@ -63,11 +71,39 @@ public class ArrayList<T> {
 		for (int i = 0; i < backingArray.length; i++) {
 			if (backingArray[i] == null)
 				break;
-			System.out.println("\n\n   " + (i+1) + ") " + backingArray[i]);
+			System.out.println("\n\n   " + (i + 1) + ") " + backingArray[i]);
 		}
 	}
 
 	public boolean isEmpty() {
-		return currentLastIndex==0;
+		return currentLastIndex == 0;
 	}
+
+	@Override
+	public Iterator<T> iterator() {
+
+		return new ArrayListIterator();
+	}
+
+	class ArrayListIterator implements Iterator {
+		int index = 0;
+		T data;
+
+		@Override
+		public boolean hasNext() {
+			return (index <= backingArray.length - 1 && backingArray[index] != null);
+
+		}
+
+		@Override
+		public T next() {
+			if (!hasNext())
+				return null;
+			data = backingArray[index];
+			index++;
+			return data;
+		}
+
+	}
+
 }

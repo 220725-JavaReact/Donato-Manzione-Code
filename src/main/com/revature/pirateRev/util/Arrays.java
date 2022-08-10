@@ -17,7 +17,8 @@ public class Arrays {
 	public static void printArray(Object[] array) {
 		System.out.println("\t\t*******");
 		for (int i = 0; i < array.length; i++) {
-			if(array[i]==null) break;
+			if (array[i] == null)
+				break;
 			System.out.print(array[i]);
 			if (i < array.length - 1)
 				System.out.println();
@@ -55,8 +56,6 @@ public class Arrays {
 
 					System.out.println(store.getName());
 
-
-
 				} else {
 					Product product = (Product) array[i];
 					if (array[0] == null) {
@@ -75,6 +74,14 @@ public class Arrays {
 			System.out.println("\t\t*******");
 		}
 
+	}
+
+	public static void printArrayNumbered(Object[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == null)
+				continue;
+			System.out.println(i + 1 + ") " + arr[i] + "\n");
+		}
 	}
 
 }

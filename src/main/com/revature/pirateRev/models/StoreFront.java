@@ -16,6 +16,10 @@ public class StoreFront {
 		this.name = name;
 	}
 
+	public StoreFront() {
+		
+	}
+
 	public String locate(String name) {
 		return NauticalChart.map.get(name);
 	}

@@ -5,10 +5,29 @@ public class Product {
 	private double price;
 	private String description;
 
-	@SuppressWarnings("unused")
-	private enum category {
-		trinkets, clothingAndAccessories, magicTokensAndPotions, navigation, weaponry, howToGuides, miscellaneous
+	private String store;
+
+	public String getCategory() {
+		return category;
 	}
+
+	public void setCategory(String string) {
+		this.category = string;
+	}
+
+	public String getStore() {
+		return store;
+	}
+
+	public void setStore(String store) {
+		this.store = store;
+	}
+
+	private String category;
+
+//	{
+//		trinkets, clothingAndAccessories, magicTokensAndPotions, navigation, weaponry, howToGuides, miscellaneous
+//	}
 
 	public String getName() {
 
@@ -33,6 +52,11 @@ public class Product {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "\n\n\t" + name + " --- $" + price + "\n\t\tCategory: " + category + "\n\t\tLocation: " + store;
 	}
 
 }
