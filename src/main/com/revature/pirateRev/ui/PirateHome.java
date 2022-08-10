@@ -70,7 +70,7 @@ public class PirateHome {
 	}
 
 	private static void showPastOrders() {
-		Object[] myOrders = orderDAO.readAllByPirateName();
+		Object[] myOrders = orderDAO.readAllByPirateName(pirate.getName());
 
 	}
 

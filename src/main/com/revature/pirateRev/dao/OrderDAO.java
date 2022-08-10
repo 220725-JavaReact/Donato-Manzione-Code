@@ -7,10 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.revature.pirateRev.collections.ArrayList;
-import com.revature.pirateRev.models.LineItem;
 import com.revature.pirateRev.models.Order;
-import com.revature.pirateRev.models.Order;
-import com.revature.pirateRev.models.Product;
+import com.revature.pirateRev.models.Pirate;
 import com.revature.pirateRev.util.CaptainsLogger;
 import com.revature.pirateRev.util.ConnectionFactory;
 import com.revature.pirateRev.util.CaptainsLogger.LogLevel;
@@ -18,8 +16,8 @@ import com.revature.pirateRev.util.CaptainsLogger.LogLevel;
 public class OrderDAO implements DAO<Order> {
 
 	private CaptainsLogger logger = CaptainsLogger.getLogger();
-	private ProductDAO productDAO = new ProductDAO();
 	private LineItemDAO lineItemDAO = new LineItemDAO();
+	private PirateDAO pirateDAO = new PirateDAO();
 
 	@Override
 	public void create(Order order) {
@@ -110,6 +108,33 @@ public class OrderDAO implements DAO<Order> {
 			System.out.println(e);
 		}
 		return orders.getAllElements();
+	}
+
+	public Object[] readAllByPirateName(String name) {
+		Pirate pirate = pirateDAO.readByName(name);
+
+		String query = "SELECT * FROM orders WHERE pirate_id = " + pirate.getId() + ";";
+		ArrayList<Order> orders = new ArrayList<Order>();
+		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
+			Order order = null;
+			while (rs.next()) {
+				order = new Order();
+				order.setOrderID(rs.getInt("order_id"));
+				order.setLineItems(lineItemDAO.readAllByOrderID(order.getOrderID()));
+				order.setTotalPrice(rs.getDouble("total_price"));
+				order.setPirateID(rs.getInt("pirate_id"));
+
+				orders.add(order);
+			}
+
+		} catch (SQLException e) {
+
+			System.out.println(e);
+		}
+		return orders.getAllElements();
+
 	}
 
 }

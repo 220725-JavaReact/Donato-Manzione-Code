@@ -21,7 +21,7 @@ public class StoreFront {
 	}
 
 	public String locate(String name) {
-		return NauticalChart.map.get(name);
+		return NauticalChart.get(name);
 	}
 
 	public String getName() {
