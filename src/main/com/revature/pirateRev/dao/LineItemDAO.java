@@ -114,5 +114,29 @@ public class LineItemDAO implements DAO<LineItem> {
 		}
 		return lineItems.getAllElements();
 	}
+	
+	public ArrayList<LineItem> readAllByOrderID(int orderID){
+		
+		String query = "SELECT * FROM line_item WHERE order_id = " + orderID + ";";
+		ArrayList<LineItem> lineItems = new ArrayList<LineItem>();
+		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
+			LineItem lineItem = null;
+			while (rs.next()) {
+				lineItem = new LineItem();
+				lineItem.setId(rs.getInt("line_item_id"));
+				lineItem.setProduct(productDAO.readById(rs.getInt("product_id")));
+				lineItem.setOrderID(rs.getInt("order_id"));
+				lineItem.setQuantity(rs.getInt("quantity"));
+				lineItems.add(lineItem);
+			}
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		return lineItems;
+	}
 
 }
