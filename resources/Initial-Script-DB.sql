@@ -238,5 +238,4 @@ values(
 ('Cook Branch', 'Blackbeard: His Life and Times',35.00,'howToGuides')
 
 
-select * from products;
-
+select * from products where PRODUCt_id = 1;

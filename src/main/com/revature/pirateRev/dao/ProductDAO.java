@@ -24,11 +24,9 @@ public class ProductDAO implements DAO<Product> {
 					+ product.getProductId() + ", '"+product.getName()+"','" + product.getStore() + "'," + product.getPrice() + ",'"
 					+ product.getCategory() + "')";
 			Statement stmt = conn.createStatement();
-			if (!stmt.execute(query)) {
-				logger.log(LogLevel.ERROR, "Error adding product to database");
-			} else {
+			
 				logger.log(LogLevel.INFO, "Product: " + product + " added to database successfully");
-			}
+			
 		} catch (SQLException e) {
 			logger.log(LogLevel.ERROR, "Error adding product " + product + "\n to database: \n" + e);
 			System.out.println("Error adding product " + product + "\n to database: \n");
