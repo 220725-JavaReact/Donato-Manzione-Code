@@ -1,8 +1,10 @@
 package com.revature.networking.dotNet;
 
-//Demonstrate sockets
-import java.net.*;
 import java.io.*;
+import java.net.Socket;
+
+//Demonstrate sockets
+
 public class Whois {
 	
 	public static void main(String[] args)  {
@@ -16,7 +18,7 @@ public class Whois {
 		OutputStream out = s.getOutputStream();
 		
 		//construct a request string
-		String str = (args.length == 0 ? "OraclePressBooks.com": args[0]) + "\n";
+		String str = (args.length == 0 ? "bookmarks.com": args[0]) + "\n";
 		
 		//convert to bytes
 		byte[] buf = str.getBytes();
