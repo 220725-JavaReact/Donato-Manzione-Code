@@ -1,0 +1,21 @@
+import javax.swing.*;
+public class SwingApplication1{
+
+    public SwingApplication1(){
+        super("Hello World Swing Application");
+    }
+
+    public static void createAndShowGui(){
+
+        JFrame.setDefaultLookAndFeelDecorated(true);
+
+        //Create and set up the window
+        JFrame frame = new SwingApplication1();
+        
+        
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+    }
+
+}
