@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
+
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
@@ -51,15 +51,12 @@ public class LoginFX extends Application {
 		// but set title first
 		stage.setTitle("Log in");
 		stage.setScene(scene);
-		
-		
-		
-		//show the window!
+
+		// show the window!
 		stage.show();
 
 	}
-	
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}

@@ -1,4 +1,5 @@
 package com.revature.guis.swing;
+
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -39,15 +40,13 @@ public class SwingApplication2v1 extends JFrame implements ActionListener {
 	private JLabel label;
 	private JTextField tf;
 
-	
-	
 	// main method
 	public static void main(String[] args) {
 
-		//something about event dispatchers... look into it later
-		
+		// something about event dispatchers... look into it later
+
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
-		
+
 			@Override
 			public void run() {
 				createAndShowGui();

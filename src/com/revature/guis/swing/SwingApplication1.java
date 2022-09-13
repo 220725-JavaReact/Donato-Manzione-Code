@@ -1,6 +1,5 @@
 package com.revature.guis.swing;
 
-
 import javax.swing.JFrame;
 
 public class SwingApplication1 extends JFrame {
