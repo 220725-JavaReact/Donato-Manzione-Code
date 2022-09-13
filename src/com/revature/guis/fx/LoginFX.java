@@ -1,4 +1,4 @@
-package application;
+package com.revature.guis.fx;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
@@ -10,7 +10,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
-public class Main extends Application {
+public class LoginFX extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
