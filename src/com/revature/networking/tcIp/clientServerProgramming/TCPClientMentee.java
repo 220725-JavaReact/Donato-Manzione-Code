@@ -5,13 +5,10 @@ import java.io.*;
 import java.net.*;
 
 
-//This class will encapsulate an open socket at
-//port 4242 by using the java.net.Socket class, used
-//for clients
 
-//It represents the receiving end of a TCP connection 
-//where advice can be sent from a wiser computer server
-//upon opening a connection
+//This class encapsulates the receiving end of a TCP connection 
+//where advice is sent from a server to a client
+//upon request
 public class TCPClientMentee {
 
 
