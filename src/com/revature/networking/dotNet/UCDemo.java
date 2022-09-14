@@ -1,11 +1,16 @@
 package com.revature.networking.dotNet;
 
-//Demonstrate URLConnection
+import java.net.MalformedURLException;
+import java.net.URL;
 
-import java.net.*;
-import java.io.*;
+
+
+import java.net.URLConnection;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
 
+//Demonstrating use of URLConnection
 public class UCDemo {
 
 	public static void main(String[] args) {

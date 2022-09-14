@@ -1,4 +1,4 @@
-package com.revature.networking.dotNet;
+package com.revature.networking.dotNet.dotHttp;
 //Demonstrate HttpURLConnection
 import java.net.*;
 import java.io.*;

@@ -1,4 +1,4 @@
-package com.revature.requestResponse.udp;
+package com.revature.networking.udp;
 
 import java.io.IOException;
 //Demonstrate datagrams
