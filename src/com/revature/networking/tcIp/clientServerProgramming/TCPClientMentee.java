@@ -6,7 +6,7 @@ import java.net.*;
 
 
 
-//This class encapsulates the receiving end of a TCP connection 
+//This class encapsulates client in a client-server TCP connection 
 //where advice is sent from a server to a client
 //upon request
 public class TCPClientMentee {
